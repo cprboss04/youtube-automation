@@ -47,8 +47,8 @@ jobs:
 
       - name: 🔑 Restore API credentials from base64
         run: |
-          echo "${{ secrets.CLIENT_SECRET_B64 }}" | base64 -d > client_secrets.json
-          echo "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > credentials.json
+          echo -n "${{ secrets.CLIENT_SECRET_B64 }}" | base64 -d > client_secrets.json
+          echo -n "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > credentials.json
         shell: bash
 
       - name: 🚀 Run Autonomous Production Pipeline
